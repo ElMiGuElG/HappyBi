@@ -1,0 +1,176 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(45deg, #f15bb5, #9b5de5, #00f5d4, #f4d35e);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.birthdayCard {
+
+    position: relative;
+    width: 90%;
+    max-width: 250px;
+    height:auto;
+    aspect-ratio: 250 / 350;
+    cursor: pointer;
+    transform-style: preserve-3d;
+      transform: perspective(2500px);
+    transition: 4s;
+}
+
+  .birthdayCard:hover {
+      transform: perspective(2500px) rotate(5deg);
+      box-shadow: inset 100px 20px 100px rgba(0,0,0,.15), 0 10px 100px rgba(0,0,0,0.3);
+  }
+  
+  .birthdayCard:hover .cardFront {
+    transform: rotateY(-160deg); 
+  }
+  
+  .birthdayCard:hover .front-text {
+    display: none;
+  }
+  
+  .birthdayCard:hover .wrap-deco {
+    display: none;
+  }
+  
+  .birthdayCard:hover .wrap-decoTwo {
+    display: none;
+  }
+  
+  .birthdayCard:hover .plate {
+    display: none;
+  }
+
+  .cardFront {
+    position: relative;
+    background-color: #fff;
+    width: 250px;
+    height:350px;
+    overflow: hidden;
+    transform-origin: left;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,.13), 30px 0 50px rgba(0,0,0,0.1);
+    transition: .4s;
+  }
+  
+  .happy, .toyou {
+    position: relative;
+    font-family: didot;
+    text-align: center;
+    backface-visibility: hidden;
+    font-size: 30px; 
+  }
+  
+  .happy {
+    top:190px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+  }
+  
+  .toyou {
+    top:140px;
+    font-size: 25px;
+    font-style: italic;
+  }
+  
+  .bday {
+    position: relative;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    top:160px;
+  }
+
+  .johan-face {
+    position: absolute;
+    width: 170px;
+    height: 180px;
+    top: 20px;
+    left: 40px;
+    border: 3px solid #4052fc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        clip-path: polygon(
+            0 20%,
+            15% 0,
+            85% 0,
+            100% 20%,
+            100% 80%,
+            85% 100%,
+            15% 100%,
+            0 80%
+    );
+}
+
+.johan-face::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: rgba(255, 255, 255, 0.5);
+    clip-path: polygon(
+        0 25%,
+        20% 5%,
+        80% 5%,
+        100% 25%,
+        100% 75%,
+        80% 95%,
+        20% 95%,
+        0 75%
+    );
+    opacity: 0.5;
+}
+
+  .cardInside {
+    position: absolute;
+    background-color: #fff;
+    width: 250px;
+    height:350px;
+    z-index:-1;
+    left:0;
+    top:0;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,0.2);
+  }
+  
+  .inside-text {
+    position: relative;
+    top:-160px;
+    transform: scale(0.7);
+  }
+  
+  .wishes {
+    position: relative;
+    top:-100px;
+    margin: 25px;
+  }
+  
+  p {
+    text-align: justify;
+    font-family: 'Lora', serif;
+    color: #333;
+  }
+  
+  .name {
+    margin-left:150px;
+  }
+
